@@ -1,0 +1,113 @@
+/* A propos CSS (version détaillée pour about.php) */
+#a-propos {
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding: 0 10%;
+    width: 100%;
+}
+
+.title {
+    text-transform: capitalize;
+    margin: 70px 0;
+    font-weight: bold;
+    color: #29d9d5;
+    position: relative;
+    margin-left: 15px;
+    font-size: 18px;
+}
+
+.title::after {
+    position: absolute;
+    left: -15px;
+    content: "";
+    height: 100%;
+    background-color: #fff;
+    width: 5px;
+}
+
+.img-desc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+.img-desc.reverse {
+    flex-direction: row-reverse;
+}
+
+.img-desc .left {
+    position: relative;
+    margin-left: 10px;
+    height: 300px;
+    width: 40%;
+}
+
+.img-desc .right {
+    width: 57%;
+}
+
+.img-desc .left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    box-shadow: 0 0 10px #29d9d5;
+}
+
+.img-desc .left::after {
+    position: absolute;
+    bottom: -10px;
+    right: 10px;
+    content: "";
+    height: 100%;
+    background-color: #29d9d5;
+    width: 100%;
+    z-index: -1;
+}
+
+.img-desc .right h3 {
+    color: #fff;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.img-desc .right p {
+    color: #999;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.img-desc .right a {
+    border: 1px solid #29d9d5;
+    color: #29d9d5;
+    font-size: 14px;
+    padding: 8px 25px;
+    font-weight: bold;
+}
+
+/* Responsive spécifique à about */
+@media (max-width: 750px) {
+    .img-desc {
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    .img-desc.reverse {
+        flex-direction: column;
+    }
+    .img-desc .left, .img-desc .right {
+        width: 100%;
+    }
+    .img-desc .left img {
+        width: 100%;
+    }
+    .img-desc .left::after {
+        background-color: transparent;
+    }
+    .img-desc .left {
+        margin-bottom: 20px;
+        height: 200px;
+    }
+}
